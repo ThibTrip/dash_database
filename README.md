@@ -37,16 +37,19 @@ dash_db = DashDatabase(db_location = None)
 
 # save values for user 123
 dash_db.store_user_value(user_id = 123, key_name = 'account_id', value = 46887)
-dash_db.store_user_value(user_id = 123, key_name = 'favorite_animal', value = 'yellow')
+dash_db.store_user_value(user_id = 123, key_name = 'favorite_animal', value = 'monkey')
 dash_db.list_stored_user_keys(123) # list the names of the keys use by the user
+['account_id','favorite_animal']
 
 # save values for user 456
 dash_db.store_user_value(user_id = 456, key_name = 'account_id', value = 87874)
 dash_db.store_user_value(456, 'favorite_color', 'green')
 dash_db.list_stored_user_keys(456) # list the names of the keys use by the user
+['account_id','favorite_color']
 
 # get the value behind a user key
 dash_db.get_user_value(user_id = 123, key_name = 'favorite_animal')
+'monkey'
 
 # delete a key and its value for a user
 dash_db.delete_user_value(user_id = 123, key_name = 'favorite_animal', 
@@ -59,7 +62,9 @@ dash_db.delete_all_user_values(456)
 
 # list all keys of the users again for testing purposes
 dash_db.list_stored_user_keys(123)
+['account_id']
 dash_db.list_stored_user_keys(456)
+[]
 ```
 
 ## Example with a dash app
