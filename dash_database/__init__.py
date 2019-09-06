@@ -142,11 +142,5 @@ class DashDatabase():
         
 
     def __repr__(self):
-        repr_str = []
-        repr_str.append(f'DashDatabase at {self.db.filename}')
-
-        # assemble string
-        repr_str = ''.join(repr_str)
-        
+        repr_str = f'DashDatabase at "{self.db.filename}"'
         return repr_str
-
