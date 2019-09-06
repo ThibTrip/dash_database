@@ -33,18 +33,18 @@ Import the main object DashDatabase and you can start managing data already. Det
 from dash_database import DashDatabase
 
 # create an instance of DashDatabase
-dash_db = DashDatabase(db_location = None)
+dash_db = DashDatabase(db_location = None) # if None it is created in a temp folder and deleted after use
 
 # save values for user 123
 dash_db.store_user_value(user_id = 123, key_name = 'account_id', value = 46887)
 dash_db.store_user_value(user_id = 123, key_name = 'favorite_animal', value = 'monkey')
-dash_db.list_stored_user_keys(123) # list the names of the keys use by the user
+dash_db.list_stored_user_keys(123) # list the names of the keys used by the user
 ['account_id','favorite_animal']
 
 # save values for user 456
 dash_db.store_user_value(user_id = 456, key_name = 'account_id', value = 87874)
 dash_db.store_user_value(456, 'favorite_color', 'green')
-dash_db.list_stored_user_keys(456) # list the names of the keys use by the user
+dash_db.list_stored_user_keys(456) # list the names of the keys used by the user
 ['account_id','favorite_color']
 
 # get the value behind a user key
