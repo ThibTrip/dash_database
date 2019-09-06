@@ -50,7 +50,9 @@ dash_db.get_user_value(user_id = 123, key_name = 'favorite_animal')
 
 # delete a key and its value for a user
 dash_db.delete_user_value(user_id = 123, key_name = 'favorite_animal', 
-                          if_not_exists = 'ignore') # if 'raise' raises an Error when a key is not found (default 'ignore')
+                          # when if_not_exists is equal to "raise" you get an error if a key does not exist
+                          # if it is equal to "ignore" nothing happens if it does not exist (default)
+                          if_not_exists = 'ignore') 
 
 # delete all keys and their values for a user
 dash_db.delete_all_user_values(456)
@@ -85,7 +87,7 @@ def serve_layout():
     
     # store the session id in a dcc.Store component (invisible component for storing data)
     store_session_id_div = dcc.Store(id='session_id_div_id', 
-                                     storage_type = 'session', # IMPORTANT! see docstring of dcc.Store for more info
+                                     storage_type = 'session', # IMPORTANT! see docstring of dcc.Store 
                                      data = session_id)
     
     # create tab to enter a value
@@ -115,8 +117,8 @@ def create_callback_save_value(app:dash.Dash,
                                dash_db:DashDatabase):
     @app.callback(Output('success_value_saved', 'children'),
                   [Input('ok_button', 'n_clicks')], # the button triggers the callback
-                  [State('input_div', 'value'), # this is additional information and does not trigger the callback 
-                   State('session_id_div_id', 'data')]) # used to identify the user and save its data in a DashDatabase instance
+                  [State('input_div', 'value'), # additional info that does not trigger the callback 
+                   State('session_id_div_id', 'data')]) # used to identify the user and save its data
     def save_value(n_clicks, value, session_id):
         
         # when the app starts all callbacks are triggered by default. 
