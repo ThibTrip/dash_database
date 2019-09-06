@@ -72,9 +72,9 @@ class DashDatabase():
         >>> dash_db.list_stored_user_keys(456)
         
 
-    
     Example integration within dash app:
-        To be added
+    
+        See ./dash_database/README.MD
     
     """
     
