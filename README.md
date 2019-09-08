@@ -8,11 +8,7 @@ It has the following benefits:
 * no need to fiddle with json dumps and pickles unlike redis or dcc.Store. It takes any picklable objects out of the box.
 * no need to have a redis server running
 * it is thread safe
-
-It has the following inconvenient(s):
-
-* Does not work in memory like redis but on disk. But this means using a high performance SSD will help with large data.
-
+* it can work in memory
 
 # Installation
 
@@ -39,13 +35,13 @@ dash_db = DashDatabase(db_location = None) # if None it is created in a temp fol
 dash_db.store_user_value(user_id = 123, key_name = 'account_id', value = 46887)
 dash_db.store_user_value(user_id = 123, key_name = 'favorite_animal', value = 'monkey')
 dash_db.list_stored_user_keys(123) # list the names of the keys used by the user
-['account_id','favorite_animal']
+['account_id', 'favorite_animal']
 
 # save values for user 456
 dash_db.store_user_value(user_id = 456, key_name = 'account_id', value = 87874)
 dash_db.store_user_value(456, 'favorite_color', 'green')
 dash_db.list_stored_user_keys(456) # list the names of the keys used by the user
-['account_id','favorite_color']
+['account_id', 'favorite_color']
 
 # get the value behind a user key
 dash_db.get_user_value(user_id = 123, key_name = 'favorite_animal')
