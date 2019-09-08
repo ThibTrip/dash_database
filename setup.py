@@ -34,6 +34,6 @@ setuptools.setup(
                  "Programming Language :: Python :: 3",
                  "Programming Language :: Python :: 3.6",
                  "Programming Language :: Python :: 3.7",
-                 "License :: The Unlicense",
+                 "License :: Public Domain",
                  "Intended Audience :: Developers",
                  "Operating System :: OS Independent"])
