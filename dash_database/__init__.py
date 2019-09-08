@@ -111,10 +111,10 @@ class DashDatabase():
             return unique_key_name
         
         def _verify_types(user_id, key_name = None):
-            
+                        
             # user_id is always used an argument so we can always test it
             tested_types_user_id = tuple([str,int])
-            
+                        
             if not isinstance(user_id,tested_types_user_id):
                 raise TypeError(f'the type user_id can only be one of {tested_types_user_id} (for stability reasons as other types were not tested)')
             
@@ -122,7 +122,7 @@ class DashDatabase():
             tested_types_key_name = tuple([str,int])
 
             if key_name is not None:
-                if not isinstance(user_id,tested_types_user_id):
+                if not isinstance(key_name,tested_types_key_name):
                     raise TypeError(f'the type key_name can only be one of {tested_types_key_name} (for stability reasons as other types were not tested)')
         
         self._create_unique_key_name = _create_unique_key_name
@@ -167,6 +167,7 @@ class DashDatabase():
 
     def get_user_value(self, user_id, key_name):
         """Gets a value for given user id from given key name.
+        Returns None if the key does not exist for given user id.
         
         Args:
             user_id: unique identifier (str or int)
@@ -194,6 +195,8 @@ class DashDatabase():
         Usage:
             see docsting of DashDatabase
         """   
+        self._verify_types(user_id, key_name)
+        
         unique_key_name = self._create_unique_key_name(user_id, key_name)
         
         if if_not_exists == 'ignore':
@@ -218,7 +221,9 @@ class DashDatabase():
 
         Usage:
             see docsting of DashDatabase
-        """           
+        """
+        self._verify_types(user_id)
+        
         user_keys = self.list_stored_user_keys(user_id = user_id)
         
         for key in user_keys:
