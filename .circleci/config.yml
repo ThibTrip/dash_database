@@ -26,6 +26,8 @@ jobs:
           . venv/bin/activate
           pip install -e . # install package (fetches setup.py in current directory)
           python -m doctest -v ./dash_database/__init__.py
+          pip install codecov
+          codecov
     - store_artifacts:
         path: test_results
         destination: test_results
