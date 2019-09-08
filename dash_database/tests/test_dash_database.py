@@ -56,5 +56,5 @@ except ValueError as e:
 dash_db.delete_user_value(user_id = 123, key_name = 'test', if_not_exists = 'ignore')
 
 # representation of DashDatabase
-dash_db
+print(dash_db)
 
