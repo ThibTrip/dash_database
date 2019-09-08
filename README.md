@@ -15,10 +15,7 @@ It has the following benefits:
 # Installation
 
 ```
-# clone repository
-git clone https://github.com/ThibTrip/dash_database.git
-# install dash_database
-pip install ./dash_database  # do not forget ./ (from local folder and not from Python Package Index)
+pip install dash-database
 ```
 
 # Usage
