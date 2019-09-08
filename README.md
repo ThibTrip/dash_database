@@ -1,3 +1,5 @@
+[![CircleCI](https://circleci.com/gh/ThibTrip/dash_database.svg?style=svg)](https://circleci.com/gh/ThibTrip/dash_database)
+
 # dash_database
 
 Manages user values for a [dash](https://github.com/plotly/dash) app. This is an alternative solution for [sharing data between callbacks](https://dash.plot.ly/sharing-data-between-callbacks) based on the library sqlitedict. 
