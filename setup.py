@@ -18,12 +18,12 @@ with open(os.path.join(here, "requirements.txt"),"r") as f:
 
 setuptools.setup(
     name="dash_database",
-    version="1.1",
+    version="1.0",
     license = 'The Unlicense',
     author="Thibault Bétrémieux",
     author_email="thibault.betremieux@gmail.com",
     url = 'https://github.com/ThibTrip/dash_database',
-    download_url = 'https://github.com/ThibTrip/dash_database/archive/v1.1.tar.gz',
+    download_url = 'https://github.com/ThibTrip/dash_database/archive/v1.0.tar.gz',
     keywords = ['dash','plotly'],
     description=description,
     long_description=long_description,
