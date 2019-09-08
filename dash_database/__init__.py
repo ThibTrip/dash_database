@@ -229,3 +229,7 @@ class DashDatabase():
         """Create representation for DashDabase (show location of database)."""
         repr_str = f'DashDatabase at "{self.db.filename}"'
         return repr_str
+    
+if __name__ == "__main__":
+    import doctest
+    doctest.testmod(raise_on_error = True, verbose = True
