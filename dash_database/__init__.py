@@ -110,7 +110,7 @@ class DashDatabase():
             unique_key_name = f'{user_id}_{key_name}'
             return unique_key_name
         
-        def _verifty_types(user_id, key_name = None):
+        def _verify_types(user_id, key_name = None):
             
             # user_id is always used an argument so we can always test it
             tested_types_user_id = tuple([str,int])
@@ -126,6 +126,8 @@ class DashDatabase():
                     raise TypeError(f'the type key_name can only be one of {tested_types_key_name} (for stability reasons as other types were not tested)')
         
         self._create_unique_key_name = _create_unique_key_name
+        self._verify_types = _verify_types
+        
 
 
     def list_stored_user_keys(self, user_id):
@@ -138,7 +140,7 @@ class DashDatabase():
             see docsting of DashDatabase
         
         """
-        _verifty_types(user_id)
+        self._verify_types(user_id)
         
         # get list of keys starting with user_id
         user_keys = [key for key in self.db.keys() if key.startswith(str(user_id))]
@@ -158,7 +160,7 @@ class DashDatabase():
         Usage:
             see docsting of DashDatabase
         """
-        _verifty_types(user_id, key_name)
+        self._verify_types(user_id, key_name)
 
         unique_key_name = self._create_unique_key_name(user_id, key_name)
         self.db[unique_key_name] = value
@@ -173,7 +175,7 @@ class DashDatabase():
         Usage:
             see docsting of DashDatabase
         """       
-        _verifty_types(user_id, key_name)
+        self._verify_types(user_id, key_name)
         
         unique_key_name = self._create_unique_key_name(user_id, key_name)
         return self.db.get(unique_key_name)
