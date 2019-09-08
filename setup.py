@@ -23,6 +23,7 @@ setuptools.setup(
     author="Thibault Bétrémieux",
     author_email="thibault.betremieux@gmail.com",
     url = 'https://github.com/ThibTrip/dash_database',
+    download_url = 'https://github.com/ThibTrip/dash_database/archive/v1.tar.gz',
     keywords = ['dash','plotly'],
     description=description,
     long_description=long_description,
