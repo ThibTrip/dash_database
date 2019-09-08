@@ -1,4 +1,4 @@
-[![CircleCI](https://circleci.com/gh/ThibTrip/dash_database.svg?style=svg)](https://circleci.com/gh/ThibTrip/dash_database)
+[![CircleCI](https://circleci.com/gh/ThibTrip/dash_database.svg?style=svg)](https://circleci.com/gh/ThibTrip/dash_database) [![codecov](https://codecov.io/gh/ThibTrip/dash_database/branch/master/graph/badge.svg)](https://codecov.io/gh/ThibTrip/dash_database)
 
 # dash_database
 
