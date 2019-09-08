@@ -25,8 +25,7 @@ jobs:
         command: |
           . venv/bin/activate
           pip install -e . # install package (fetches setup.py in current directory)
-          ### run modules (there are tests with docstest) ###
-          python ./dash_database/__init__.py
+          python -m doctest -v ./dash_database/__init__.py
     - store_artifacts:
         path: test_results
         destination: test_results
