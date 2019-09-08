@@ -27,6 +27,7 @@ jobs:
           pip install -e . # install package (fetches setup.py in current directory)
           pip install codecov
           coverage run ./dash_database/__init__.py
+          coverage annotate
           coverage run ./dash_database/tests/test_dash_database.py
           coverage annotate
           codecov
