@@ -28,7 +28,6 @@ jobs:
           pip install codecov
           coverage run ./dash_database/__init__.py
           coverage annotate
-          cat ./dash_database/__init__.py,./dash_database/cover
           codecov
     - store_artifacts:
         path: test_results
