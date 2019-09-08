@@ -6,7 +6,7 @@ Manages user values for a [dash](https://github.com/plotly/dash) app. This is an
 
 It has the following benefits:
 
-* easy installation via git clone and pip install (I would like to push dash_database to PyPI to make it even easier but want to make sure there aren't any issues inherent to using sqlitedict first) unlike redis
+* easy installation via pip install unlike redis
 * no need to fiddle with json dumps and pickles unlike redis or dcc.Store. It takes any picklable objects out of the box.
 * no need to have a redis server running
 * it is thread safe
