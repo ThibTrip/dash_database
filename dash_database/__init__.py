@@ -232,4 +232,4 @@ class DashDatabase():
     
 if __name__ == "__main__":
     import doctest
-    doctest.testmod(raise_on_error = True, verbose = True
+    doctest.testmod(raise_on_error = True, verbose = True)
