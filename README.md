@@ -146,11 +146,11 @@ def create_callback_retrieve_value(app:dash.Dash,
         if n_clicks is None:
             raise PreventUpdate
             
-        # save value 
+        # retrieve value 
         value = dash_db.get_user_value(user_id = session_id, 
                                        key_name = 'value')
         
-        # return success message
+        # return message with value
         return f"Your value is {value}"
     
     
