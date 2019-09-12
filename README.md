@@ -14,7 +14,7 @@ Manages user values for a [dash](https://github.com/plotly/dash) app. This is an
 
 ## caveats/inconvenients of dash_database
 
-* concurrent queries to the database file or to the memory are queued. If your app has to deal with big datasets (> 1 GB) and/or a substantial number of users at the same time (> 10) you might consider using redis instead (as it uses its own server it can deal with concurrent queries asynchronously)
+* concurrent queries to the database file or to the memory are queued. If your app has to deal with big datasets (> 1 GB) and/or a substantial number of users at the same time (> 10) you might consider using redis instead (as it uses its own server it can deal with concurrent queries asynchronously). See this [issue](https://github.com/ThibTrip/dash_database/issues/9) for trying to solve this.
 
 # Installation
 
