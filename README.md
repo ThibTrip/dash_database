@@ -4,13 +4,17 @@
 
 Manages user values for a [dash](https://github.com/plotly/dash) app. This is an alternative solution for [sharing data between callbacks](https://dash.plot.ly/sharing-data-between-callbacks) based on the library [sqlitedict](https://github.com/RaRe-Technologies/sqlitedict). 
 
-It has the following benefits:
+## benefits of dash_database
 
 * easy installation via pip install unlike redis
 * no need to fiddle with json dumps and pickles unlike redis or dcc.Store. It takes any picklable objects out of the box.
 * no need to have a redis server running
 * it is thread safe
 * it can work in memory
+
+## caveats/inconvenients of dash_database
+
+* concurrent queries to the database file or to the memory are queued. If your app has to deal with big datasets (> 1 GB) and/or a substantial number of users at the same time (> 10) you might consider using redis instead (as it uses its own server it can deal with concurrent queries asynchronously)
 
 # Installation
 
